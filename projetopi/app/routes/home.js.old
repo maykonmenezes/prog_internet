@@ -1,0 +1,17 @@
+module.exports = function(app) {
+  var controller = app.controllers.home;
+  app.get('/', controller.index);
+};
+
+
+
+var controllerCom = app.controllers.petComentarios;
+
+	/* comentarios */
+
+  app.route('/pets/:id/comentarios')
+  	.get(controllerCom.obtemPetComentarios)
+    .post(controllerCom.salvarPetComentario)
+
+  app.route('/pets/:id/comentarios/:cId')
+    .delete(controllerCom.removePetComentario)

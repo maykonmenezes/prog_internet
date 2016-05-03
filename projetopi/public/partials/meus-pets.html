@@ -1,0 +1,84 @@
+<nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="usuario.usuarioLogado" ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button ng-show="usuario.usuarioLogado" id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown">{{usuario.usuarioLogado}}<span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meus-pets">Meus Pets</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meu-perfil">Meus Perfil</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Meus Pets
+                    <small> cadastrados</small>
+                </h1>
+            </div>
+        </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <a ng-show="usuario.usuarioLogado" ng-href="#/pet" class="btn btn-warning btn-lg">Novo Pet</a>
+          <h4 ng-show="mensagem.texto" class="alert">
+                  {{mensagem.texto}}</h4>
+            <p class="text-info alert" ng-hide="pets.length">
+                  Não há pets cadastrados
+            </p>
+        </div>
+    <div class="col-sm-9">
+      <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#meuspets" data-toggle="tab">Meus pets</a></li>
+        </ul>
+        <div class="fh5co-spacer fh5co-spacer-sm"></div>
+        <div class="tab-content">
+        
+          <div class="tab-pane active" id="todos">
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: usuario.usuarioLogado">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                    <a ng-show="usuario.usuarioLogado" class="btn btn-lg" ng-href="#/pet/{{pet._id}}">Alterar</a>
+                    <button ng-show="usuario.usuarioLogado" class="btn btn-lg" ng-click="remove(pet)">Remover</button>
+                  </div>
+                </div>      
+              </div>       
+            </div>
+
+          </div>
+
+      </div>
+
+  </div>

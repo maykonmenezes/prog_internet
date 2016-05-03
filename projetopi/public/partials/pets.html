@@ -1,0 +1,202 @@
+<nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="usuario.usuarioLogado" ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button ng-show="usuario.usuarioLogado" id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown">{{usuario.usuarioLogado}}<span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meus-pets">Meus Pets</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meu-perfil">Meus Perfil</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-right wow pulse" data-wow-duration="0.5s">
+<div class="back-img">
+    <img src="../img/pet-image.png" class="img-responsive">
+  </div>
+  <div class="text-center"  id="con-jub">
+  <h1>MeowPet</h1> 
+  <p>Aproximando você do seu novo amigo!</p>
+  <form class="form-inline">
+    <input type="search" class="form-control input-lg" size="50" placeholder="Ex: Gato preto" ng-model="filtro">
+  </form> 
+  </div>
+</div>
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <a ng-show="usuario.usuarioLogado" ng-href="#/pet" class="btn btn-warning btn-lg">Novo Pet</a>
+        </div>
+        <div class="col-sm-9">
+          <h4 ng-show="mensagem.texto" class="alert">
+                  {{mensagem.texto}}</h4>
+            <p class="text-info alert" ng-hide="pets.length">
+                  Não há pets cadastrados
+            </p>
+        </div>
+      </div>
+      <div class="fh5co-spacer fh5co-spacer-sm"></div>
+      <div class="row">
+        
+        <!-- Container (Pricing Section) -->
+    <div class="col-sm-12">
+      <div class="tabbable"> <!-- Only required for left/right tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-target="#todos" data-toggle="tab">Todos</a></li>
+          <li><a data-target="#gatos" data-toggle="tab">Gatos</a></li>
+          <li><a data-target="#cachorros" data-toggle="tab">Cachorros</a></li>
+          <li><a data-target="#passaros" data-toggle="tab">Pássaros</a></li>
+          <li><a data-target="#outros" data-toggle="tab">Outros</a></li>
+        </ul>
+
+        <div class="tab-content">
+        
+          <div class="tab-pane active" id="todos">
+            <div class="text-center">
+              <h2 ng-show="pets.length">Pets cadastrados: {{pets.length}}</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: filtro">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                  </div>
+                </div>      
+              </div>       
+            </div>
+
+          </div>
+          <div class="tab-pane" id="gatos">
+            <div class="text-center">
+              <h2 ng-show="pets.length">Gatos</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: 'Gato' ">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                  </div>
+                </div>      
+              </div>       
+            </div>
+          </div>
+          <div class="tab-pane" id="cachorros">
+            <div class="text-center">
+              <h2 ng-show="pets.length">Cachorros</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: 'Cachorro' ">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                  </div>
+                </div>      
+              </div>       
+          </div>
+          </div>
+
+          <div class="tab-pane" id="passaros">
+            <div class="text-center">
+              <h2 ng-show="pets.length">Passaros</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: 'Passaro' ">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                  </div>
+                </div>      
+              </div>       
+          </div>
+        </div>
+
+        <div class="tab-pane" id="outros">
+            <div class="text-center">
+              <h2 ng-show="pets.length">Outros Pets</h2>
+            </div>
+            <div class="row">
+              <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: 'Outro' ">
+                <a ng-href="#/pet-details/{{pet._id}}">
+                <div class="panel panel-default text-center wow fadeInUp" data-wow-duration="0.5s">
+                  <div class="panel-heading">
+                    <h1>{{pet.nome}}</h1>
+                  </div>
+                  </a>
+                  <div class="panel-body">
+                    <span class="glyphicon glyphicon-picture logo"></span>
+                  </div>
+                  <div class="panel-footer">
+                    <h3>{{pet.categoria}}</h3>
+                    <h4>{{pet.descricao}}</h4>
+                    <h4>{{pet.email}}</h4>
+                    <h4>{{pet.inclusao}}</h4>
+                  </div>
+                </div>      
+              </div>       
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

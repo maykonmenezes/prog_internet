@@ -1,0 +1,163 @@
+<nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="usuario.usuarioLogado" ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button ng-show="usuario.usuarioLogado" id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown">{{usuario.usuarioLogado}}<span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meus-pets">Meus Pets</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meu-perfil">Meus Perfil</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="pet container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <h3>Novo Pet</h3>
+    </div>
+    <!-- Container (Pricing Section) -->
+<div id="pricing" class="col-sm-8">
+  <div class="text-center">
+
+    <h2>Cadastro</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Precisamos que você nos informe alguns dados sobre o seu pet</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+      <form ng-submit="salva()" novalidate>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Nome" type="text" ng-model="pet.nome" required>
+        </div>
+
+        <div class="col-sm-6 form-group">
+			   <input type="file" placeholder="incluir">
+        </div>
+
+        <div class="col-sm-12 form-group">
+				<textarea name="descricao" placeholder="Descrição" class="form-control" rows="5" 
+				required ng-model="pet.descricao">	
+				</textarea>
+        </div>
+
+        <div class="col-sm-6 form-group">
+				<select class="form-control" required ng-model="pet.categoria" placeholder="Categoria">
+          <option value="">Categoria</option>
+					<option value="Gato">Gato</option>
+					<option value="Cachorro">Cachorro</option>
+					<option value="Passaro">Passaro</option>
+					<option value="Outro Pet">Outro Pet</option>
+				</select>
+        </div>
+
+        <div class="col-sm-6 form-group">
+        <select class="form-control" required ng-model="pet.sexo" placeholder="Sexo">
+          <option value="">Sexo</option>
+          <option value="Macho">Macho</option>
+          <option value="Fémea">Fémea</option>
+        </select>
+        </div>
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" placeholder="Idade" type="text" ng-model="pet.idade" required>
+        </div>
+          
+        <div class="col-sm-6 form-group">
+          <input class="form-control" placeholder="Dono do Pet" type="text" ng-model="pet.dono" required>
+        </div>
+        
+        <div class="col-sm-6 form-group">
+          <input class="form-control" placeholder="Cidade" type="text" ng-model="pet.cidade" required>
+        </div>
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="email@gmail.com" type="email" required ng-model="pet.email">
+        </div>
+        
+        <div class="col-sm-6 form-group">
+          <select class="form-control" required ng-model="pet.estado">
+            <option value="">Estado</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espirito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+        
+
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-lg pull-right" type="submit" data-toggle="modal" data-target="#myModal">Salvar</button>
+          <a href="#/" class="btn btn-lg pull-right">Voltar</a>
+
+        </div>
+       </form>
+      </div>
+      </div> 
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{mensagem.texto}}</h4>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

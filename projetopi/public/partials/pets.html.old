@@ -1,0 +1,78 @@
+
+
+<div class="jumbotron text-center">
+  <h1>MeowPet</h1> 
+  <p>Aproximando você do seu novo amigo!</p>
+  <form class="form-inline">
+    <input type="search" class="form-control input-lg" size="50" placeholder="Ex: Gato preto" ng-model="filtro">
+  </form> 
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2">
+      <a ng-href="#/pet" class="btn btn-default btn-lg">Novo Pet</a>
+      <h4 ng-show="mensagem.texto">
+              {{mensagem.texto}}</h4>
+        <p class="text-info" ng-hide="pets.length">
+              Não há pets cadastrados
+        </p>
+        <div class="row">
+      <button type="button" class="btn btn-danger btn-lg" data-toggle="collapse" data-target="#demo">
+        Categorias
+      </button>
+ 
+      <div id="demo" class="collapse in">
+        <a href="#/" type="button" class="btn btn-default btn-sm">
+        Gatos
+      </a>
+      <a href="#/" type="button" class="btn btn-default btn-sm">
+        Cachorros
+      </a>
+      <a href="#/" type="button" class="btn btn-default btn-sm">
+        Passaros
+      </a>
+      </div>
+    </div>
+    </div>
+    
+    <!-- Container (Pricing Section) -->
+<div class="col-sm-8">
+  <div class="text-center">
+    <h2 ng-show="pets.length">Pets cadastrados: {{pets.length}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-xs-12" ng-repeat="pet in pets | filter: filtro">
+      <a ng-href="#/pet-details/{{pet._id}}">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h1>{{pet.nome}}</h1>
+        </div>
+        </a>
+        <div class="panel-body">
+          <span class="glyphicon glyphicon-picture logo"></span>
+        </div>
+        <div class="panel-footer">
+          <h3>{{pet.categoria}}</h3>
+          <h4>{{pet.descricao}}</h4>
+          <h4>{{pet.email}}</h4>
+          <h4>{{pet.inclusao}}</h4>
+          <a class="btn btn-lg" ng-href="#/pet/{{pet._id}}">Alterar</a>
+          <button class="btn btn-lg" ng-click="remove(pet)">Remover</buttom>
+        </div>
+      </div> 
+      
+           
+    </div>       
+  </div>
+</div>
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>MeowPets <a href="#/" title=""></a></p>		
+</footer>

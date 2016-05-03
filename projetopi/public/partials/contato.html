@@ -1,0 +1,64 @@
+<nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="usuario.usuarioLogado" ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button ng-show="usuario.usuarioLogado" id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown">{{usuario.usuarioLogado}}<span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meus-pets">Meus Pets</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meu-perfil">Meus Perfil</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="fh5co-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2>Contato</h2>
+					<div class="fh5co-spacer fh5co-spacer-sm"></div>
+					<form action="#">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="First Name">	
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Last Name">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="email" class="form-control" placeholder="Email Address">
+								</div>
+								<div class="form-group">
+									<textarea name="message" id="message" cols="30" class="form-control" rows="10"></textarea>
+								</div>
+								<div class="form-group">
+									<input type="submit" class="btn btn-primary" value="Send Message">
+								</div>
+							</div>
+						</div>
+					</form>
+					
+				</div>
+        		
+        	</div>
+       </div>
+	</div>

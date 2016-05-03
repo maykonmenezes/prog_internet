@@ -1,0 +1,128 @@
+<!-- public/index.html -->
+<!doctype html>
+<html ng-app="projetopi">
+  <head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:css css/index.min.css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/css/style.css">
+    <link rel="stylesheet" href="vendor/wow/css/libs/animate.css">
+    <!-- endbuild -->
+    <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+
+    <!-- Animate.css -->
+  <link rel="stylesheet" href="vendor/css/adc/animate.css">
+  <!-- Icomoon Icon Fonts-->
+  <link rel="stylesheet" href="vendor/css/adc/icomoon.css">
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" href="vendor/css/adc/magnific-popup.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="vendor/css/adc/salvattore.css">
+  <!-- Theme Style -->
+  <!--<link rel="stylesheet" href="vendor/css/adc/style.css">-->
+  <!-- Modernizr JS -->
+  <script src="vendor/js/adc/modernizr-2.6.2.min.js"></script>
+  <!-- FOR IE9 below -->
+  <!--[if lt IE 9]>
+  <script src="vendor/js/adc/respond.min.js"></script>
+  <![endif]-->
+
+  </head>
+  
+  <body>
+  <nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown"><span id="usuario-logado">
+                            <%=usuarioLogado %>
+            </span><span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-hide="usuario-logado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<div id="fh5co-offcanvass">
+    <a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+    <h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">MeowPet</a></h1>
+    <ul>
+      <li class="active"><a href="#/">Home</a></li>
+      <li><a href="#/pets/comofunciona">Como funciona?</a></li>
+      <li><a href="#/pets/porqueadotar">Porque adotar?</a></li>
+      <li><a href="#/pets/contato">Contato</a></li>
+    </ul>
+    <h3 class="fh5co-lead">Se conecte conosco!</h3>
+    <p class="fh5co-social-icons">
+      <a href="#/"><i class="icon-twitter"></i></a>
+      <a href="#/"><i class="icon-facebook"></i></a>
+      <a href="#/"><i class="icon-instagram"></i></a>
+      <a href="#/"><i class="icon-dribbble"></i></a>
+      <a href="#/"><i class="icon-youtube"></i></a>
+    </p>
+  </div>
+
+    <div ng-view></div>
+
+    <footer class="container-fluid text-center">
+      <a href="#" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+      <p>MeowPets <a href="#/" title=""></a></p>    
+    </footer>
+    
+    <!-- build:js js/index.min.js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/wow/dist/wow.min.js"></script> 	
+  	<script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="vendor/angular-resource/angular-resource.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/PetsController.js"></script>
+    <script src="js/controllers/PetController.js"></script>
+    <script src="js/controllers/PetDetailsController.js"></script>
+    <script src="js/services/PetService.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <!-- endbuild -->
+
+    <!-- jQuery -->
+  <script src="vendor/js/adc/jquery.min.js"></script>
+  <!-- jQuery Easing -->
+  <script src="vendor/js/adc/jquery.easing.1.3.js"></script>
+  <!-- Bootstrap -->
+  <!--<script src="vendor/js/adc/bootstrap.min.js"></script>-->
+  <!-- Waypoints -->
+  <script src="vendor/js/adc/jquery.waypoints.min.js"></script>
+  <!-- Magnific Popup -->
+  <script src="vendor/js/adc/jquery.magnific-popup.min.js"></script>
+  <!-- Salvattore -->
+  <script src="vendor/js/adc/salvattore.min.js"></script>
+  <!-- Main JS -->
+  <script src="vendor/js/adc/main.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<nav class="navbar navbar-transparent navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand wow tada" href="#top">MeowPet</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-hide="usuario.usuarioLogado" ><a href="/auth/github"><button class="btn btn-success btn-sm" >Login com o github <span href="/auth/github" class="glyphicon glyphicon-log-in"></span></button></a></li>
+        <li ng-hide="usuario-logado">
+          <button ng-show="usuario.usuarioLogado" id="but-user" class="btn btn-primary btn-sm" type="button" data-toggle="dropdown">{{usuario.usuarioLogado}}<span class="glyphicon glyphicon-user">
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meus-pets">Meus Pets</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="#/pets/meu-perfil">Meus Perfil</a></li>
+            <li ng-show="usuario.usuarioLogado"><a href="/logout">Logout</a></li>
+          </ul>
+        </li>
+        <li>  <a data-target="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="fh5co-main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2>Porque Adotar</h2>
+					<div class="fh5co-spacer fh5co-spacer-sm"></div>
+					<p>
+					<img src="http://www.clinicacoyote.com.br/sites/default/files/noticias/adote-um-amigo.jpg" alt="Free HTML5 template by FREEHTML5.co" class="img-rounded img-responsive"></p>
+						
+					<div class="fh5co-spacer fh5co-spacer-sm"></div>
+						
+					<p>No Brasil, embora não haja uma estatística oficial, o número de animais simplesmente “jogados fora” e abandonados à própria sorte pode chegar a 20 milhões.</p>
+
+					<p>É triste e, ao mesmo tempo, inacreditável que muitas pessoas ainda preferem comprar um cãozinho ou um gatinho, de criadores ou online (que utilizam suas “matrizes” [fêmeas] como ferramentas para ganhar dinheiro), com tantos animais precisando ser adotados, precisando de um lar.</p>
+
+					<p>	Se entendermos que animais não são mercadorias, mas seres capazes de sentimento, que têm necessidades de amar e de serem amados, concordaremos que não há sentido em se comprar animais. Comprando um animal, você estará incentivando um comércio muito injusto, o comércio de seres vivos. Lembre-se que só haverá vendedor se houver comprador.</p>
+
+					<p>	O comprador de animais em feiras de filhotes muitas vezes não tem consciência disso, assim como desconhece a quantidade imensa de animais que aguardam adoção ou que aguardam a morte no corredor final do CCZ, Centro de Controle de Zoonoses das prefeituras.</p>
+				
+					<p> Adotar um animal é valorizar a vida. Um cão ou gato é capaz de sentir emoções – como dor e alegria/excitação – e por isso, sofre tanto quanto nós, humanos. É recuperar uma vida literalmente jogada fora. Ao adotar um animal carente, você ensina ao seu filho, às crianças com quem você convive, verdadeiros valores de responsabilidade, comprometimento e, sobretudo, humanidade. </p>
+
+					<p>	Ao adotar, você ajuda a reduzir o número de cães e gatos abandonados. Geralmente os animais de rua ou de abrigos já passaram por muito sofrimento e tudo o que eles precisam é de um bom lar para serem felizes de verdade.</p>
+					
+					<p>	E não há recompensa maior do que vê-los se transformarem naquela coisinha alegre e saudável depois de receberem uma boa dose de cuidados e carinho.</p>
+
+					<p>	Pensando bem, a pergunta é outra: se você pode mudar o destino de um animal carente, por que você não faria isso?</p>
+
+					<p class="text-info">Fontes: http://adote-naocompre.com/</p>
+					
+				</div>
+				
+        		
+        	</div>
+       </div>
+	</div>
